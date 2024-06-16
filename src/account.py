@@ -7,6 +7,9 @@ class Account:
         self.name = name
         self.balance = balance
 
+    def __repr__(self) -> str:
+        return f'<Account account_id={self.account_id}, name={self.name}, balance={self.balance}>'
+
     @property
     def balance(self) -> Decimal:
         return self._balance
