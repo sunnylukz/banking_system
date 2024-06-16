@@ -1,5 +1,7 @@
 from decimal import Decimal
 
+from src.exception import BankException
+
 
 class Account:
     def __init__(self, account_id: str, name: str, balance: Decimal):
@@ -27,7 +29,7 @@ class Account:
         self.balance -= amount
 
 
-class AccountNotFoundException(Exception):
+class AccountNotFoundException(BankException):
     def __init__(self, account_id: str):
         self.account_id = account_id
 
@@ -35,7 +37,7 @@ class AccountNotFoundException(Exception):
         return f'Unable to find account {self.account_id}'
 
 
-class AccountIdExistsException(Exception):
+class AccountIdExistsException(BankException):
     def __init__(self, account_id: str):
         self.account_id = account_id
 
@@ -43,5 +45,5 @@ class AccountIdExistsException(Exception):
         return f'Account with account_id {self.account_id} already exists'
 
 
-class InvalidAccountOperationException(Exception):
+class InvalidAccountOperationException(BankException):
     pass
