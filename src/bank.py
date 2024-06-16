@@ -44,7 +44,7 @@ class Bank:
     def withdraw(self, account_id: str, amount: Decimal) -> Account:
         account = self.get_account(account_id)
         account.withdraw(amount)
-        return Account
+        return account
 
     def transfer(self, from_account_id: str, to_account_id: str, amount: Decimal) -> Tuple[Account, Account]:
         # Assumption: This application is not used with concurrency
