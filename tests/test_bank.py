@@ -14,6 +14,7 @@ class BaseBankTestCase(TestCase):
     def setUp(self, ) -> None:
         self.mock_account_helper = create_autospec(AccountHelper)
         self.mock_repository = create_autospec(Repository)
+        self.mock_repository.load_state.return_value = {}  # Assume bank starts with fresh state
         self.bank = Bank(account_helper=self.mock_account_helper,
                          repository=self.mock_repository)
 
