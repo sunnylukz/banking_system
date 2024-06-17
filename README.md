@@ -6,6 +6,9 @@ The is a command-line interface that allows users to interact with the simple ba
 
 1. Clone the repository or download the source code.
 2. Install the necessary dependencies. (Ensure you have Python installed, tested python version 3.9.6)
+```
+pip install -r requirements.txt
+```
 
 ## Usage
 
@@ -83,6 +86,12 @@ You will find an exported state in `example.csv`
 account_id,name,balance
 da5dcff7-4606-4875-bb58-f0dcbf4cfe92,Adam,1074.5
 98386356-35e6-402f-9aa0-02ac58874d87,Troy,180.5
+```
+
+## Testing
+Tests can be executed with python built-in unittest module
+```python
+python -m unittest
 ```
 
 ## Assumption
